@@ -12,7 +12,7 @@
             margin: 0;
             padding: 20px;
         }
-        input[type="text"], a, button {
+        input[type="text"], button, a {
             padding: 10px;
             margin: 10px 0;
             font-size: 16px;
@@ -29,7 +29,12 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            display: inline-block;
+        }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -37,9 +42,15 @@
     <h1>Confirmar Presença</h1>
     <form id="attendanceForm">
         <input type="text" id="name" placeholder="Digite seu nome" required>
-        <button type="submit">Confirmar Presença</button>
-        <!-- Mudança feita aqui, substituímos o botão por um link -->
-        <a href="/lista-de-presença/confirmação/lista.html">Ver Lista de Presença</a>
+        <div class="centered">
+            <button type="submit">Confirmar Presença</button>
+        </div>
+        <div class="centered">
+            <button onclick="window.history.back()" style="background-color: #4CAF50; color: white;"><a href="/casamentoc/index.html">Voltar</a></button>
+        </div>
+        <div class="centered">
+            <a href="/lista-de-presença/confirmação/lista.html">Ver Lista de Presença</a>
+        </div>
     </form>
 
     <script>
