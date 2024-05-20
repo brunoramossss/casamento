@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença Confirmada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        /* Estilo para o link */
+        a.button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Presença Confirmada</h1>
+    <form id="attendeeForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit" class="button">Confirmar Presença</button>
+    </form>
+    <ul id="attendeeList"></ul>
+    <!-- O link para voltar à página anterior -->
+    <a href="" class="button">Voltar</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let attendees = JSON.parse(localStorage.getItem('attendees')) || [];
+            const attendeeList = document.getElementById('attendeeList');
+            renderAttendees();
+
+            function renderAttendees() {
+                attendeeList.innerHTML = ''; // Limpar a lista antes de renderizar novamente
+                attendees.forEach(function(name) {
+                    let listItem = document.createElement('li');
+                    listItem.textContent = name;
+                    attendeeList.appendChild(listItem);
+                });
+            }
+
+            const form = document.getElementById('attendeeForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio do formulário padrão
+
+                const nameInput = document.getElementById('name');
+                const name = nameInput.value.trim(); // Remover espaços em branco extras no início e no final
+
+                // Verificar se o nome já está na lista
+                if (attendees.includes(name)) {
+                    alert('Este nome já está na lista de presença.');
+                    return;
+                }
+
+                // Adicionar o nome à lista
+                attendees.push(name);
+                localStorage.setItem('attendees', JSON.stringify(attendees));
+
+                // Limpar o campo de entrada
+                nameInput.value = '';
+
+                // Renderizar novamente a lista de presença
+                renderAttendees();
+            });
+        });
+    </script>
+</body>
+</html>

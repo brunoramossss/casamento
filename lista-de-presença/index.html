@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        input[type="text"], a, button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirmar Presença</h1>
+    <form id="attendanceForm">
+        <input type="text" id="name" placeholder="Digite seu nome" required>
+        <button type="submit">Confirmar Presença</button>
+        <!-- Mudança feita aqui, substituímos o botão por um link -->
+        <a href="confirmação/lista.html">Ver Lista de Presença</a>
+    </form>
+
+    <script>
+        document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            if (name) {
+                let attendees = JSON.parse(localStorage.getItem('attendees')) || [];
+                attendees.push(name);
+                localStorage.setItem('attendees', JSON.stringify(attendees));
+                alert('Presença confirmada para ' + name + '!');
+                document.getElementById('name').value = '';
+            } else {
+                alert('Por favor, insira seu nome.');
+            }
+        });
+    </script>
+</body>
+</html>
