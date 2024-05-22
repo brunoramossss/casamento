@@ -11,6 +11,9 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 20px;
+            height: 100vh; /* Altura da janela de visualização */
+            overflow-y: scroll; /* Adiciona rolagem vertical */
+            scroll-behavior: smooth; /* Efeito de rolagem suave */
         }
         input[type="text"], button, a {
             padding: 10px;
@@ -46,7 +49,9 @@
             <button type="submit">Confirmar Presença</button>
         </div>
         <div class="centered">
-            <button onclick="window.history.back()" style="background-color: #4CAF50; color: white;"><a href="index.html">Voltar</a></button>
+            <button onclick="window.history.back()" style="background-color: #4CAF50; color: white;">
+                <a href="index.html" style="color: white; text-decoration: none;">Voltar</a>
+            </button>
         </div>
         <div class="centered">
             <a href="confirmados.html">Ver Lista de Presença</a>
