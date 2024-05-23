@@ -245,7 +245,11 @@
     </div>
 
     <script>
-        let nomesSelecionados = {};
+        let nomesSelecionados = JSON.parse(localStorage.getItem('nomesSelecionados')) || {};
+
+        function salvarDados() {
+            localStorage.setItem('nomesSelecionados', JSON.stringify(nomesSelecionados));
+        }
 
         function selecionarItem(button) {
             let nomePessoa = document.getElementById("nome").value.trim();
@@ -266,8 +270,24 @@
                 button.disabled = true;
                 nomesSelecionados[item] = nomePessoa;
                 button.parentNode.nextElementSibling.textContent = nomePessoa;
+                salvarDados();
             }
         }
+
+        function carregarDados() {
+            let botoes = document.querySelectorAll("table tbody tr td button");
+            botoes.forEach(button => {
+                let item = button.parentNode.previousElementSibling.textContent;
+                if (item in nomesSelecionados) {
+                    button.classList.add("button-selecionado");
+                    button.textContent = "Selecionado";
+                    button.disabled = true;
+                    button.parentNode.nextElementSibling.textContent = nomesSelecionados[item];
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", carregarDados);
     </script>
 </body>
 </html>
