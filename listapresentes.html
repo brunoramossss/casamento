@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Presentes</title>
     <link rel="stylesheet" href="stylelistapresentes.css">
+    <style>
+        .voltar-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <button class="voltar-btn" onclick="irParaPagina()">Voltar</button>
     <div class="container">
         <h1>Lista de Presentes</h1>
         <table id="listaPresentes">
@@ -84,5 +98,11 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        function irParaPagina() {
+            window.location.href = "";
+        }
+    </script>
 </body>
 </html>
