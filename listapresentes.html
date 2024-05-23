@@ -4,121 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Presentes</title>
-    <link rel="stylesheet" href="listapresentes.css">
-    <style>
-        /* Estilos gerais */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #eb8029, #f0d9bb);
-            overflow-y: scroll;*/
-        }
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .formulario {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .formulario label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        .formulario input[type="text"] {
-            width: calc(100% - 20px);
-            padding: 8px;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        .seta-up {
-            display: block;
-            font-size: 24px;
-            margin: 10px auto;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            background-color: #ffffff;
-            color: #000;
-        }
-
-        th {
-            background-color: #945124;
-            color: #fff;
-            padding: 10px;
-            border: 1px solid black;
-        }
-        td {
-            border: 1px solid #000;
-            padding: 10px;
-            text-align: left;
-            background-color: #e6a478;
-        }
-        tr.category-categoria td {
-            border: 1px solid black;
-            background-color: #945124;
-            color: #fff;
-            font-weight: bold;
-            text-align: left;
-        }
-        .button-selecionado {
-            background-color: #532f15;
-            color: #dfee12;
-            cursor: default;
-        }
-        .btn-voltar {
-            background-color: #007BFF;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .btn-voltar:hover {
-            background-color: #007BFF;
-        }
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 20px;
-            }
-
-            .formulario input[type="text"] {
-                width: calc(100% - 20px);
-                font-size: 14px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="stylelistapresentes.css">
 </head>
 <body>
     <div class="container">
         <h1>Lista de Presentes</h1>
-        <a href="index.html" class="btn-voltar">Voltar para Página de Destino</a> 
-        <div class="formulario">
-            <label for="nome">Escreva seu nome aqui:</label>
-            <input type="text" id="nome">
-        </div>
-
         <table id="listaPresentes">
             <thead>
                 <tr>
                     <th>Item</th>
-                    <th>Selecione</th>
-                    <th>Selecionado por</th>
                 </tr>
             </thead>
             <tbody>
@@ -127,130 +21,68 @@
                 </tr>
                 <tr>
                     <td>Geladeira</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Micro-Ondas (Preto)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Purificador De Água (Preto)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Sanduicheira(Preto)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Panela Eletrica</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>cafeteira (Preto)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Maquina de fazer suco (espremedor,extrator) (Preto)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr class="category-categoria">
                     <td colspan="3">Sala De Estar</td>
                 </tr>
                 <tr>
                     <td>Sofá Retratil (Cinza Claro)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Projetor (Branco)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Mesa De Centro (Branco)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Ar Condicionado Pórtatil (Branco)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr class="category-categoria">
                     <td colspan="3">Quarto</td>
                 </tr>
                 <tr>
                     <td>Guarda Roupa branco</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Edredom</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                </tr>
                <tr>
                     <td>Jogo De Lençol (140cm x 190cm)</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                </tr>
                <tr>
                     <td>Kit Toalhas</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                </tr>
                 <tr class="category-categoria">
                     <td colspan="3">Lavanderia</td>
                 <tr>
                     <td>Maquina De Lavar</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Aspirador De Pó</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>Tabua De Passar</td>
-                    <td><button onclick="selecionarItem(this)">Selecionar</button></td>
-                    <td></td>
                 </tr>
             </tbody>
         </table>
     </div>
-
-    <script>
-        let nomesSelecionados = {};
-
-        function selecionarItem(button) {
-            let nomePessoa = document.getElementById("nome").value.trim();
-            if (nomePessoa === "") {
-                alert("Por favor, digite seu nome antes de selecionar um item.");
-                return;
-            }
-
-            let item = button.parentNode.previousElementSibling.textContent;
-            if (item in nomesSelecionados) {
-                alert("Este item já foi selecionado por " + nomesSelecionados[item]);
-                return;
-            }
-
-            if (confirm("Você quer marcar este item como selecionado?")) {
-                button.classList.add("button-selecionado");
-                button.textContent = "Selecionado";
-                button.disabled = true;
-                nomesSelecionados[item] = nomePessoa;
-                button.parentNode.nextElementSibling.textContent = nomePessoa;
-            }
-        }
-    </script>
 </body>
 </html>
