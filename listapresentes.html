@@ -6,23 +6,45 @@
     <title>Lista de Presentes</title>
     <link rel="stylesheet" href="stylelistapresentes.css">
     <style>
-        .voltar-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: blue;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px; /* Limitando a largura para facilitar a visualização em dispositivos móveis */
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .category-categoria {
+            background-color: #f2f2f2;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <button class="voltar-btn" onclick="irParaPagina()">Voltar</button>
     <div class="container">
-        <h1>Lista de Presentes</h1>
+        <h1 style="text-align: center;">Lista de Presentes</h1>
         <table id="listaPresentes">
             <thead>
                 <tr>
@@ -46,19 +68,19 @@
                     <td>Sanduicheira(Preto)</td>
                 </tr>
                 <tr>
-                    <td>Panela Eletrica</td>
+                    <td>Panela Elétrica</td>
                 </tr>
                 <tr>
-                    <td>cafeteira (Preto)</td>
+                    <td>Cafeteira (Preto)</td>
                 </tr>
                 <tr>
-                    <td>Maquina de suco (espremedor,extrator) (Preto)</td>
+                    <td>Máquina de suco (espremedor, extrator) (Preto)</td>
                 </tr>
                 <tr class="category-categoria">
                     <td colspan="3">Sala De Estar</td>
                 </tr>
                 <tr>
-                    <td>Sofá Retratil (Cinza Claro)</td>
+                    <td>Sofá Retrátil (Cinza Claro)</td>
                 </tr>
                 <tr>
                     <td>Projetor (Branco)</td>
@@ -67,13 +89,13 @@
                     <td>Mesa De Centro (Branco)</td>
                 </tr>
                 <tr>
-                    <td>Ar Condicionado Pórtatil (Branco)</td>
+                    <td>Ar Condicionado Portátil (Branco)</td>
                 </tr>
                 <tr class="category-categoria">
                     <td colspan="3">Quarto</td>
                 </tr>
                 <tr>
-                    <td>Guarda Roupa branco</td>
+                    <td>Guarda Roupa Branco</td>
                 </tr>
                 <tr>
                     <td>Edredom</td>
@@ -87,22 +109,16 @@
                 <tr class="category-categoria">
                     <td colspan="3">Lavanderia</td>
                 <tr>
-                    <td>Maquina De Lavar</td>
+                    <td>Máquina De Lavar</td>
                 </tr>
                 <tr>
                     <td>Aspirador De Pó</td>
                 </tr>
                 <tr>
-                    <td>Tabua De Passar</td>
+                    <td>Tábua De Passar</td>
                 </tr>
             </tbody>
         </table>
     </div>
-
-    <script>
-        function irParaPagina() {
-            window.location.href = "";
-        }
-    </script>
 </body>
 </html>
